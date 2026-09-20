@@ -70,11 +70,31 @@ To upload
 # Program
 
 ---
-To upload
+```
+int sensor=A0;  //Analog 0 pin named as sensor
+int output=9;   //Pin-9 is declared as output
+
+void setup()                                                          
+{
+pinMode(output, OUTPUT); //Pin-9 is declared as output 
+//We dont need to declare the A0 pin as input since it is predefined as input                                                
+}
+
+void loop()
+{ 
+int reading=analogRead(sensor); //Reading the voltage out by potentiometer
+int bright=reading/4;           //Dividing reading by 4 to bring it in range of 0 - 255                               
+delay(500);                     //Delay is not necessary you can remove it
+analogWrite(output, bright);    //Finally outputting the read value on pin-9 fading led
+}  
+
+
+```
 ---
 
-# Observation
 
+# Observation
+<img width="1600" height="1284" alt="image" src="https://github.com/user-attachments/assets/7c5eb2a8-1d84-462c-bba5-ecea09f31c11" />
 
 # Result
 
